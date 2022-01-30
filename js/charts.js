@@ -71,7 +71,7 @@ function buildCharts(sample) {
     var otuIDs = result.out_ids;
     var otuLabels = result.otu_labels;
     var sampleValue = result.sample_values;
-    console.log(otu_ids, otu_labels, sample_values);
+    console.log(otuIDs, otuLabels, sampleValue);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
