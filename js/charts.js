@@ -81,7 +81,6 @@ function buildCharts(sample) {
     //  so the otu_ids with the most bacteria are last. 
     var yticks = otu_ids.slice(0,10).reverse();
     var yticks = yticks.map(ytick => "OTU " + ytick.toString());
-    console.log(yticks);
     var xticks = sample_values.slice(0,10).reverse();
     var labels = otu_labels.slice(0,10).reverse();
 
@@ -97,16 +96,13 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found",
-      margin: {
-        l: 100,
-        r: 100,
-        t: 100,
-        b: 100
+      yaxis: {
+        showticklabels: true
       }
     };
 
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", [barData], barLayout);
+    Plotly.newPlot("bar", barData, barLayout);
 
 
     // 1. Create the trace for the bubble chart.
