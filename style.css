@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(1, 24, 58);
+  }
+  
+  .jumbotron {
+    background-image: url("banner.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  
