@@ -67,20 +67,21 @@ function buildCharts(sample) {
     //  5. Create a variable that holds the first sample in the array.
     var result = filtered_samples[0];
 
-    // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-    var otuIDs = result.otu_ids;
-	  
-	  var otuLabels = result.otu_labels;
-	
-	  var sampleValue = result.sample_values;
+     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
+	  var otu_ids = result.otu_ids;
+    console.log(otu_ids);
+    var otu_labels = result.otu_labels;
+    console.log(otu_labels);
+    var sample_values = result.sample_values;
+    console.log(sample_values);
 	 
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
-    var yticks = otuIDs.slice(0,10).map(otuID => 'OTU ${otuID}').reverse();
-    var xticks = sampleValue.slice(0,10).reverse();
-    var labels = otuLabels.slice(0,10).reverse();
+    var yticks = otu_ids.slice(0,10).map(otu_ids => 'OTU ${otu_ids}').reverse();
+    var xticks = sample_values.slice(0,10).reverse();
+    var labels = otu_labels.slice(0,10).reverse();
 
     // 8. Create the trace for the bar chart. 
     var barData = [{
@@ -108,13 +109,13 @@ function buildCharts(sample) {
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
-      x: otuIDs,
-      y: sampleValue,
-      text: otuLabels,
+      x: otu_ids,
+      y: sample_values,
+      text: otu_labels,
       mode: 'markers',
       marker: {
-        color: otuIDs,
-        size: sampleValue,
+        color: otu_ids,
+        size: sample_values,
         colorscale: 'Earth'
       }
     }];
